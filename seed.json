@@ -1,0 +1,1744 @@
+{
+  "source": "treino_full_body_progressao_atualizado.xlsx",
+  "sha256": "b2478818da60a469990e0ac210db681f94925387533390ed616924a5147ea637",
+  "exercises": [
+    {
+      "id": "A1",
+      "day": "A",
+      "name": "Agachamento hack ou livre",
+      "sets": 3,
+      "target": "6-10",
+      "unit": "kg"
+    },
+    {
+      "id": "A2",
+      "day": "A",
+      "name": "Supino reto com barra",
+      "sets": 3,
+      "target": "6-10",
+      "unit": "kg"
+    },
+    {
+      "id": "A3",
+      "day": "A",
+      "name": "Remada baixa",
+      "sets": 3,
+      "target": "8-12",
+      "unit": "kg"
+    },
+    {
+      "id": "A4",
+      "day": "A",
+      "name": "Mesa flexora",
+      "sets": 3,
+      "target": "10-12",
+      "unit": "kg"
+    },
+    {
+      "id": "A5",
+      "day": "A",
+      "name": "Elevação lateral",
+      "sets": 3,
+      "target": "12-15",
+      "unit": "kg"
+    },
+    {
+      "id": "A6",
+      "day": "A",
+      "name": "Rosca direta",
+      "sets": 2,
+      "target": "10-12",
+      "unit": "kg"
+    },
+    {
+      "id": "A7",
+      "day": "A",
+      "name": "Prancha frontal",
+      "sets": 3,
+      "target": "30-45 s",
+      "unit": "seg"
+    },
+    {
+      "id": "B1",
+      "day": "B",
+      "name": "Leg press 45°",
+      "sets": 3,
+      "target": "10-12",
+      "unit": "kg"
+    },
+    {
+      "id": "B2",
+      "day": "B",
+      "name": "Puxada alta na frente",
+      "sets": 3,
+      "target": "8-12",
+      "unit": "kg"
+    },
+    {
+      "id": "B3",
+      "day": "B",
+      "name": "Supino inclinado com halteres",
+      "sets": 3,
+      "target": "8-12",
+      "unit": "kg"
+    },
+    {
+      "id": "B4",
+      "day": "B",
+      "name": "Elevação pélvica",
+      "sets": 3,
+      "target": "10-12",
+      "unit": "kg"
+    },
+    {
+      "id": "B5",
+      "day": "B",
+      "name": "Desenvolvimento com halteres",
+      "sets": 2,
+      "target": "10-12",
+      "unit": "kg"
+    },
+    {
+      "id": "B6",
+      "day": "B",
+      "name": "Tríceps na polia",
+      "sets": 3,
+      "target": "10-15",
+      "unit": "kg"
+    },
+    {
+      "id": "B7",
+      "day": "B",
+      "name": "Abdominal na polia",
+      "sets": 3,
+      "target": "12-15",
+      "unit": "kg"
+    },
+    {
+      "id": "C1",
+      "day": "C",
+      "name": "Agachamento goblet ou hack",
+      "sets": 3,
+      "target": "10-12",
+      "unit": "kg"
+    },
+    {
+      "id": "C2",
+      "day": "C",
+      "name": "Crucifixo livre com halteres",
+      "sets": 3,
+      "target": "10-15",
+      "unit": "kg"
+    },
+    {
+      "id": "C3",
+      "day": "C",
+      "name": "Remada articulada",
+      "sets": 3,
+      "target": "10-12",
+      "unit": "kg"
+    },
+    {
+      "id": "C4",
+      "day": "C",
+      "name": "Mesa flexora (substitui stiff)",
+      "sets": 3,
+      "target": "10-15",
+      "unit": "kg"
+    },
+    {
+      "id": "C5",
+      "day": "C",
+      "name": "Face pull",
+      "sets": 3,
+      "target": "12-15",
+      "unit": "kg"
+    },
+    {
+      "id": "C6",
+      "day": "C",
+      "name": "Rosca martelo",
+      "sets": 2,
+      "target": "10-12",
+      "unit": "kg"
+    },
+    {
+      "id": "C7",
+      "day": "C",
+      "name": "Tríceps francês",
+      "sets": 2,
+      "target": "10-12",
+      "unit": "kg"
+    },
+    {
+      "id": "C8",
+      "day": "C",
+      "name": "Panturrilha em pé",
+      "sets": 3,
+      "target": "12-15",
+      "unit": "kg"
+    },
+    {
+      "id": "C9",
+      "day": "C",
+      "name": "Prancha lateral",
+      "sets": 3,
+      "target": "20-30 s/lado",
+      "unit": "seg"
+    }
+  ],
+  "records": [
+    {
+      "exercise": "A1",
+      "week": 1,
+      "sets": [
+        {
+          "value": 30.0,
+          "reps": 10.0
+        },
+        {
+          "value": 40.0,
+          "reps": 8.0
+        },
+        {
+          "value": 60.0,
+          "reps": null
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A1",
+      "week": 2,
+      "sets": [
+        {
+          "value": 30.0,
+          "reps": 10.0
+        },
+        {
+          "value": 40.0,
+          "reps": 8.0
+        },
+        {
+          "value": 60.0,
+          "reps": 8.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A1",
+      "week": 3,
+      "sets": [
+        {
+          "value": 40.0,
+          "reps": 12.0
+        },
+        {
+          "value": 60.0,
+          "reps": 8.0
+        },
+        {
+          "value": 60.0,
+          "reps": 8.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A1",
+      "week": 4,
+      "sets": [
+        {
+          "value": 50.0,
+          "reps": 10.0
+        },
+        {
+          "value": 50.0,
+          "reps": 10.0
+        },
+        {
+          "value": 50.0,
+          "reps": 10.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A2",
+      "week": 1,
+      "sets": [
+        {
+          "value": 20.0,
+          "reps": 8.0
+        },
+        {
+          "value": 30.0,
+          "reps": 8.0
+        },
+        {
+          "value": 30.0,
+          "reps": 8.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A2",
+      "week": 2,
+      "sets": [
+        {
+          "value": 40.0,
+          "reps": 8.0
+        },
+        {
+          "value": 40.0,
+          "reps": 8.0
+        },
+        {
+          "value": 50.0,
+          "reps": 6.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A2",
+      "week": 3,
+      "sets": [
+        {
+          "value": 40.0,
+          "reps": 10.0
+        },
+        {
+          "value": 50.0,
+          "reps": 8.0
+        },
+        {
+          "value": 60.0,
+          "reps": 4.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A2",
+      "week": 4,
+      "sets": [
+        {
+          "value": 40.0,
+          "reps": 12.0
+        },
+        {
+          "value": 40.0,
+          "reps": 12.0
+        },
+        {
+          "value": 50.0,
+          "reps": 8.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A3",
+      "week": 1,
+      "sets": [
+        {
+          "value": 40.0,
+          "reps": 10.0
+        },
+        {
+          "value": 60.0,
+          "reps": 8.0
+        },
+        {
+          "value": 60.0,
+          "reps": 8.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A3",
+      "week": 2,
+      "sets": [
+        {
+          "value": 40.0,
+          "reps": 10.0
+        },
+        {
+          "value": 60.0,
+          "reps": 8.0
+        },
+        {
+          "value": 60.0,
+          "reps": 8.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A3",
+      "week": 3,
+      "sets": [
+        {
+          "value": 140.0,
+          "reps": 20.0
+        },
+        {
+          "value": 176.5,
+          "reps": 15.0
+        },
+        {
+          "value": 176.5,
+          "reps": 13.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A3",
+      "week": 4,
+      "sets": [
+        {
+          "value": 176.5,
+          "reps": 13.0
+        },
+        {
+          "value": 176.5,
+          "reps": 13.0
+        },
+        {
+          "value": 176.5,
+          "reps": 13.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A4",
+      "week": 1,
+      "sets": [
+        {
+          "value": 10.0,
+          "reps": 10.0
+        },
+        {
+          "value": 10.0,
+          "reps": 10.0
+        },
+        {
+          "value": 10.0,
+          "reps": 10.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A4",
+      "week": 2,
+      "sets": [
+        {
+          "value": 15.0,
+          "reps": 10.0
+        },
+        {
+          "value": 15.0,
+          "reps": 10.0
+        },
+        {
+          "value": 20.0,
+          "reps": 10.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A4",
+      "week": 3,
+      "sets": [
+        {
+          "value": 20.0,
+          "reps": 10.0
+        },
+        {
+          "value": 20.0,
+          "reps": 12.0
+        },
+        {
+          "value": 20.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A4",
+      "week": 4,
+      "sets": [
+        {
+          "value": 20.0,
+          "reps": 12.0
+        },
+        {
+          "value": 20.0,
+          "reps": 12.0
+        },
+        {
+          "value": 20.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A5",
+      "week": 1,
+      "sets": [
+        {
+          "value": 10.0,
+          "reps": 12.0
+        },
+        {
+          "value": 10.0,
+          "reps": 12.0
+        },
+        {
+          "value": 10.0,
+          "reps": 6.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A5",
+      "week": 2,
+      "sets": [
+        {
+          "value": 12.5,
+          "reps": 12.0
+        },
+        {
+          "value": 12.5,
+          "reps": 12.0
+        },
+        {
+          "value": 15.0,
+          "reps": 6.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A5",
+      "week": 3,
+      "sets": [
+        {
+          "value": 15.0,
+          "reps": 12.0
+        },
+        {
+          "value": 15.0,
+          "reps": 8.0
+        },
+        {
+          "value": 15.0,
+          "reps": 8.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A5",
+      "week": 4,
+      "sets": [
+        {
+          "value": 15.0,
+          "reps": 12.0
+        },
+        {
+          "value": 15.0,
+          "reps": 12.0
+        },
+        {
+          "value": 15.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A6",
+      "week": 1,
+      "sets": [
+        {
+          "value": 20.0,
+          "reps": 12.0
+        },
+        {
+          "value": 20.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A6",
+      "week": 2,
+      "sets": [
+        {
+          "value": 20.0,
+          "reps": 12.0
+        },
+        {
+          "value": 20.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A6",
+      "week": 3,
+      "sets": [
+        {
+          "value": 20.0,
+          "reps": 12.0
+        },
+        {
+          "value": 25.0,
+          "reps": 10.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A6",
+      "week": 4,
+      "sets": [
+        {
+          "value": 25.0,
+          "reps": 12.0
+        },
+        {
+          "value": 25.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A7",
+      "week": 1,
+      "sets": [
+        {
+          "value": 60.0,
+          "reps": null
+        },
+        {
+          "value": 60.0,
+          "reps": null
+        },
+        {
+          "value": 60.0,
+          "reps": null
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A7",
+      "week": 2,
+      "sets": [
+        {
+          "value": 60.0,
+          "reps": null
+        },
+        {
+          "value": 60.0,
+          "reps": null
+        },
+        {
+          "value": 60.0,
+          "reps": null
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A7",
+      "week": 3,
+      "sets": [
+        {
+          "value": 60.0,
+          "reps": null
+        },
+        {
+          "value": 60.0,
+          "reps": null
+        },
+        {
+          "value": 60.0,
+          "reps": null
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "A7",
+      "week": 4,
+      "sets": [
+        {
+          "value": 60.0,
+          "reps": null
+        },
+        {
+          "value": 60.0,
+          "reps": null
+        },
+        {
+          "value": 60.0,
+          "reps": null
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B1",
+      "week": 1,
+      "sets": [
+        {
+          "value": 120.0,
+          "reps": 10.0
+        },
+        {
+          "value": 120.0,
+          "reps": 10.0
+        },
+        {
+          "value": 160.0,
+          "reps": 10.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B1",
+      "week": 2,
+      "sets": [
+        {
+          "value": 160.0,
+          "reps": 10.0
+        },
+        {
+          "value": 160.0,
+          "reps": 10.0
+        },
+        {
+          "value": 200.0,
+          "reps": 10.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B1",
+      "week": 3,
+      "sets": [
+        {
+          "value": 200.0,
+          "reps": 10.0
+        },
+        {
+          "value": 240.0,
+          "reps": 10.0
+        },
+        {
+          "value": 260.0,
+          "reps": 10.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B2",
+      "week": 1,
+      "sets": [
+        {
+          "value": 45.5,
+          "reps": 12.0
+        },
+        {
+          "value": 45.5,
+          "reps": 12.0
+        },
+        {
+          "value": 45.5,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B2",
+      "week": 2,
+      "sets": [
+        {
+          "value": 45.5,
+          "reps": 12.0
+        },
+        {
+          "value": 59.0,
+          "reps": 10.0
+        },
+        {
+          "value": 59.0,
+          "reps": 10.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B2",
+      "week": 3,
+      "sets": [
+        {
+          "value": 68.0,
+          "reps": 12.0
+        },
+        {
+          "value": 77.0,
+          "reps": 10.0
+        },
+        {
+          "value": 95.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B3",
+      "week": 1,
+      "sets": [
+        {
+          "value": 20.0,
+          "reps": 8.0
+        },
+        {
+          "value": 20.0,
+          "reps": 8.0
+        },
+        {
+          "value": 20.0,
+          "reps": 8.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B3",
+      "week": 2,
+      "sets": [
+        {
+          "value": 20.0,
+          "reps": 12.0
+        },
+        {
+          "value": 20.0,
+          "reps": 12.0
+        },
+        {
+          "value": 30.0,
+          "reps": 8.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B3",
+      "week": 3,
+      "sets": [
+        {
+          "value": 20.0,
+          "reps": 15.0
+        },
+        {
+          "value": 27.5,
+          "reps": 10.0
+        },
+        {
+          "value": 27.5,
+          "reps": 10.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B4",
+      "week": 1,
+      "sets": [
+        {
+          "value": 20.0,
+          "reps": 10.0
+        },
+        {
+          "value": 20.0,
+          "reps": 10.0
+        },
+        {
+          "value": 20.0,
+          "reps": 10.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B4",
+      "week": 2,
+      "sets": [
+        {
+          "value": 20.0,
+          "reps": 12.0
+        },
+        {
+          "value": 30.0,
+          "reps": 12.0
+        },
+        {
+          "value": 40.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B4",
+      "week": 3,
+      "sets": [
+        {
+          "value": 40.0,
+          "reps": 12.0
+        },
+        {
+          "value": 60.0,
+          "reps": 10.0
+        },
+        {
+          "value": 70.0,
+          "reps": 10.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B5",
+      "week": 1,
+      "sets": [
+        {
+          "value": 12.0,
+          "reps": 10.0
+        },
+        {
+          "value": 12.0,
+          "reps": 10.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B5",
+      "week": 2,
+      "sets": [
+        {
+          "value": 12.0,
+          "reps": 12.0
+        },
+        {
+          "value": 15.0,
+          "reps": 12.0
+        },
+        {
+          "value": 17.5,
+          "reps": 8.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B5",
+      "week": 3,
+      "sets": [
+        {
+          "value": 17.5,
+          "reps": 8.0
+        },
+        {
+          "value": 15.0,
+          "reps": 10.0
+        },
+        {
+          "value": 15.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B6",
+      "week": 1,
+      "sets": [
+        {
+          "value": 59.0,
+          "reps": 15.0
+        },
+        {
+          "value": 77.0,
+          "reps": 12.0
+        },
+        {
+          "value": 77.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B6",
+      "week": 2,
+      "sets": [
+        {
+          "value": 59.0,
+          "reps": 12.0
+        },
+        {
+          "value": 86.0,
+          "reps": 12.0
+        },
+        {
+          "value": 86.0,
+          "reps": 10.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B6",
+      "week": 3,
+      "sets": [
+        {
+          "value": 86.0,
+          "reps": 12.0
+        },
+        {
+          "value": 95.0,
+          "reps": 12.0
+        },
+        {
+          "value": 113.0,
+          "reps": 8.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B7",
+      "week": 1,
+      "sets": [
+        {
+          "value": 77.0,
+          "reps": 12.0
+        },
+        {
+          "value": 113.0,
+          "reps": 15.0
+        },
+        {
+          "value": 131.0,
+          "reps": 15.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B7",
+      "week": 2,
+      "sets": [
+        {
+          "value": 113.0,
+          "reps": 15.0
+        },
+        {
+          "value": 131.0,
+          "reps": 15.0
+        },
+        {
+          "value": 149.5,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "B7",
+      "week": 3,
+      "sets": [
+        {
+          "value": 149.5,
+          "reps": 15.0
+        },
+        {
+          "value": 158.5,
+          "reps": 15.0
+        },
+        {
+          "value": 176.5,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C1",
+      "week": 1,
+      "sets": [
+        {
+          "value": 15.0,
+          "reps": 12.0
+        },
+        {
+          "value": 17.5,
+          "reps": 12.0
+        },
+        {
+          "value": 20.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C1",
+      "week": 2,
+      "sets": [
+        {
+          "value": 20.0,
+          "reps": 12.0
+        },
+        {
+          "value": 22.5,
+          "reps": 12.0
+        },
+        {
+          "value": 27.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C1",
+      "week": 3,
+      "sets": [
+        {
+          "value": 30.0,
+          "reps": 12.0
+        },
+        {
+          "value": 40.0,
+          "reps": 10.0
+        },
+        {
+          "value": 40.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C2",
+      "week": 1,
+      "sets": [
+        {
+          "value": 12.5,
+          "reps": 15.0
+        },
+        {
+          "value": 12.5,
+          "reps": 15.0
+        },
+        {
+          "value": 12.5,
+          "reps": 15.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C2",
+      "week": 2,
+      "sets": [
+        {
+          "value": 15.0,
+          "reps": 15.0
+        },
+        {
+          "value": 15.0,
+          "reps": 15.0
+        },
+        {
+          "value": 17.0,
+          "reps": 10.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C2",
+      "week": 3,
+      "sets": [
+        {
+          "value": 15.0,
+          "reps": 15.0
+        },
+        {
+          "value": 17.5,
+          "reps": 14.0
+        },
+        {
+          "value": 20.0,
+          "reps": 10.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C3",
+      "week": 1,
+      "sets": [
+        {
+          "value": 40.0,
+          "reps": 12.0
+        },
+        {
+          "value": 50.0,
+          "reps": 12.0
+        },
+        {
+          "value": 60.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C3",
+      "week": 2,
+      "sets": [
+        {
+          "value": 50.0,
+          "reps": 12.0
+        },
+        {
+          "value": 50.0,
+          "reps": 12.0
+        },
+        {
+          "value": 50.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C3",
+      "week": 3,
+      "sets": [
+        {
+          "value": 50.0,
+          "reps": 12.0
+        },
+        {
+          "value": 50.0,
+          "reps": 12.0
+        },
+        {
+          "value": 50.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C4",
+      "week": 1,
+      "sets": [
+        {
+          "value": 10.0,
+          "reps": 12.0
+        },
+        {
+          "value": 10.0,
+          "reps": 15.0
+        },
+        {
+          "value": 10.0,
+          "reps": 15.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C4",
+      "week": 2,
+      "sets": [
+        {
+          "value": 15.0,
+          "reps": 12.0
+        },
+        {
+          "value": 15.0,
+          "reps": 12.0
+        },
+        {
+          "value": 15.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C4",
+      "week": 3,
+      "sets": [
+        {
+          "value": 12.0,
+          "reps": 12.0
+        },
+        {
+          "value": 12.0,
+          "reps": 12.0
+        },
+        {
+          "value": 12.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C5",
+      "week": 1,
+      "sets": [
+        {
+          "value": 68.0,
+          "reps": 12.0
+        },
+        {
+          "value": 68.0,
+          "reps": 12.0
+        },
+        {
+          "value": 69.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C5",
+      "week": 2,
+      "sets": [
+        {
+          "value": 77.0,
+          "reps": 15.0
+        },
+        {
+          "value": 95.0,
+          "reps": 15.0
+        },
+        {
+          "value": 113.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C5",
+      "week": 3,
+      "sets": [
+        {
+          "value": 113.0,
+          "reps": 12.0
+        },
+        {
+          "value": 113.0,
+          "reps": 12.0
+        },
+        {
+          "value": 122.0,
+          "reps": 10.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C6",
+      "week": 1,
+      "sets": [
+        {
+          "value": 12.5,
+          "reps": 12.0
+        },
+        {
+          "value": 12.5,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C6",
+      "week": 2,
+      "sets": [
+        {
+          "value": 15.0,
+          "reps": 12.0
+        },
+        {
+          "value": 15.0,
+          "reps": 8.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C6",
+      "week": 3,
+      "sets": [
+        {
+          "value": 15.0,
+          "reps": 12.0
+        },
+        {
+          "value": 15.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C7",
+      "week": 1,
+      "sets": [
+        {
+          "value": 10.0,
+          "reps": 12.0
+        },
+        {
+          "value": 15.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C7",
+      "week": 2,
+      "sets": [
+        {
+          "value": 17.5,
+          "reps": 12.0
+        },
+        {
+          "value": 20.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C7",
+      "week": 3,
+      "sets": [
+        {
+          "value": 20.0,
+          "reps": 12.0
+        },
+        {
+          "value": 25.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C8",
+      "week": 1,
+      "sets": [
+        {
+          "value": 72.0,
+          "reps": 12.0
+        },
+        {
+          "value": 72.0,
+          "reps": 12.0
+        },
+        {
+          "value": 72.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C8",
+      "week": 2,
+      "sets": [
+        {
+          "value": 72.0,
+          "reps": 12.0
+        },
+        {
+          "value": 79.0,
+          "reps": 12.0
+        },
+        {
+          "value": 86.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C8",
+      "week": 3,
+      "sets": [
+        {
+          "value": 86.0,
+          "reps": 12.0
+        },
+        {
+          "value": 93.0,
+          "reps": 12.0
+        },
+        {
+          "value": 100.0,
+          "reps": 12.0
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C9",
+      "week": 1,
+      "sets": [
+        {
+          "value": 20.0,
+          "reps": null
+        },
+        {
+          "value": 20.0,
+          "reps": null
+        },
+        {
+          "value": 20.0,
+          "reps": null
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C9",
+      "week": 2,
+      "sets": [
+        {
+          "value": 30.0,
+          "reps": null
+        },
+        {
+          "value": 30.0,
+          "reps": null
+        },
+        {
+          "value": 30.0,
+          "reps": null
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    },
+    {
+      "exercise": "C9",
+      "week": 3,
+      "sets": [
+        {
+          "value": 30.0,
+          "reps": null
+        },
+        {
+          "value": 30.0,
+          "reps": null
+        },
+        {
+          "value": 30.0,
+          "reps": null
+        }
+      ],
+      "note": "",
+      "date": "",
+      "source": "planilha"
+    }
+  ]
+}
