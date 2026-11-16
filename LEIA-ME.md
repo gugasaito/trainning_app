@@ -1,47 +1,43 @@
-# Full Body Tracker 2.0
+# Full Body Tracker 3.0 — várias contas
 
-PWA estático para iPhone, sem instalação de dependências. Inclui treinos A/B/C, registro automático por série, séries adicionais, semanas 1–520, histórico editável, volume semanal total, volume e carga média por exercício, tempo de pranchas e backup JSON validado.
+Cada conta Google tem registros, histórico, gráficos e sessões próprios. Contas novas começam vazias; os 23 exercícios A/B/C são comuns. O pacote público não contém o histórico da planilha pessoal.
 
-## Publicação com GitHub Pages
+## Atualizar
 
-1. Extraia este ZIP.
-2. Crie um repositório no GitHub e envie os arquivos desta pasta para a raiz, incluindo `.nojekyll`. O `index.html` deve ficar na raiz.
-3. Abra Settings → Pages → Build and deployment → Deploy from a branch.
-4. Escolha a branch main, pasta /(root), e salve.
-5. Aguarde a publicação e abra o endereço HTTPS informado pelo GitHub.
+1. Exporte o backup no app atual, na sua conta principal.
+2. Extraia este ZIP e envie TODOS os arquivos diretamente para a raiz do repositório trainning_app. Substitua os arquivos existentes; não envie o ZIP ou uma pasta contendo os arquivos.
+3. Espere a nova execução na aba Actions ficar verde. Feche todas as janelas antigas do app, abra o site e, se ainda vir a versão anterior, feche e reabra novamente. O rodapé do painel deve mostrar “Versão 3.0 · Contas separadas”. O novo cache só é ativado depois que todas as páginas antigas forem fechadas. Não apague dados do Safari para forçar a atualização.
+4. Entre na conta principal. O app recupera a nuvem dessa conta. O histórico antigo local só é migrado automaticamente se a versão anterior tiver gravado essa mesma conta como dona dos dados. Dados antigos sem dono ficam preservados e não são atribuídos a qualquer pessoa.
+5. Se precisar recuperar a planilha original, importe o arquivo privado backup-planilha-pessoal.json pela tela Backup, somente na conta principal. Esse arquivo é entregue separadamente; NÃO publique no GitHub. A importação substitui os registros da conta atual, após confirmação. Prefira o backup mais recente se já registrou novos treinos.
 
-Referência: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+Não é preciso mudar de projeto Firebase. Login Google, domínio gugasaito.github.io e Firestore devem continuar habilitados. Confirme as regras de firestore.rules no console: somente o usuário autenticado pode acessar /users/SEU_UID/…. O código cliente não substitui as regras do servidor.
 
-Os registros iniciais estão em seed.json e serão públicos em hospedagem pública. Para publicar sem seu histórico pessoal, mantenha exercises e substitua records por [] em seed.json antes de enviar.
+## Contas e sincronização
 
-## Instalação no iPhone
+O painel identifica o e-mail atual. Ao sair, os dados são ocultados. Ao entrar com outra conta, o app abre apenas os dados daquele identificador. Não há mais armazenamento global compartilhado nem carregamento automático da planilha.
 
-No Safari, abra o endereço publicado. Aguarde “Disponível offline”. Toque em Compartilhar → Adicionar à Tela de Início e habilite Abrir como App, quando oferecido. Abra pelo novo ícone e confirme que os treinos aparecem. Depois, ative o modo avião e reabra para conferir o funcionamento offline no seu aparelho.
+As edições são salvas no aparelho por conta e enviadas após 2,5 segundos sem edição. Iniciar, pausar, retomar e finalizar tentam sincronizar imediatamente. Falhas mantêm o estado pendente; o app tenta novamente com internet e enquanto aberto. Só o envio confirmado pelo Firebase é marcado como sincronizado. Para usar offline, entre com internet e reabra uma vez após a instalação do cache; mantenha a sessão autenticada. O primeiro login precisa de internet.
 
-Referência: https://support.apple.com/en-eg/guide/iphone/iphea86e5236/ios
+A sincronização confere revisões em uma transação para impedir que um aparelho substitua silenciosamente alterações recentes de outro. Se houver versões diferentes com edições pendentes, o envio pausa: exporte a cópia local e escolha Recuperar da nuvem. Não há mesclagem automática de séries editadas simultaneamente. O snapshot de cada conta tem limite conservador de 800 KB; se excedido, o app avisa e mantém os dados locais pendentes. Use o backup completo regularmente.
 
-## Uso e dados
+Os backups agora incluem registros E sessões/durações. Backups v2 antigos sem sessões continuam aceitos. O cronômetro usa os horários salvos, exclui as pausas e recompõe o tempo ao reabrir o app.
 
-Selecione treino e semana. Os campos são salvos ao digitar; aceitam vírgula decimal. A semana representa o programa, sem data obrigatória. Para continuar, use semanas posteriores. Cada exercício tem uma entrada por semana. Registre o peso de um halter, como na planilha. Séries extras já presentes foram preservadas mesmo quando excedem a prescrição.
+## Repetir o teste com segurança
 
-O volume soma carga × repetições das séries completas. Uma série com apenas carga ou apenas repetições é marcada incompleta e não entra no volume. Ausência é diferente de zero. Pranchas somam segundos, separados do volume em kg. A média considera as cargas/tempos preenchidos.
+Use uma conta Google separada. Se a versão antiga já enviou a planilha pessoal à conta de teste, ela continuará nessa conta até uma ação explícita: confirme o e-mail no painel, exporte um backup se necessário e abra “Conta, recuperação e testes” → “Limpar histórico desta conta”. Digite o e-mail de TESTE para confirmar. A conta principal não é alterada. Aguarde sincronizar a limpeza.
 
-Em Backup, exporte JSON regularmente e guarde em Arquivos/iCloud Drive. Ao restaurar, revise a contagem e confirme a substituição. O aplicativo oferece exportar o histórico atual antes da confirmação. Backups v2 são aceitos; formatos do app antigo não puderam ser inspecionados.
+Depois registre 10 kg × 5 repetições na semana 100 e finalize uma sessão. Aguarde Sincronizado, feche todas as janelas privadas e abra uma nova. Entre na mesma conta de teste: só os registros desse teste devem aparecer. Em outra sessão com a conta principal, eles não devem existir. Ao sair, nenhum histórico fica visível.
 
-Os dados ficam no armazenamento do navegador, por endereço e aparelho. Limpar os dados do site pode apagar o histórico. Ao trocar de endereço ou dispositivo, exporte e restaure o JSON. Não há sincronização com a planilha após a importação inicial.
+## Verificação realizada
 
-## Atualizações
+9 testes automatizados: fonte pública sem registros; isolamento entre contas e sessões; saída oculta dados; migração somente do dono registrado; recuperação da nuvem validada; conflitos preservam versões; resposta atrasada de uma conta não altera outra; edições durante envio continuam pendentes; backup completo e cronômetro; limpeza só da conta ativa. Sintaxe dos módulos conferida. A tela sem login foi verificada no navegador: nenhum histórico exposto.
 
-Antes de substituir arquivos, exporte um backup. Preserve o endereço e a chave de armazenamento no código. Incremente CACHE em sw.js ao modificar arquivos. Feche todas as janelas do app e reabra para ativar a nova versão. O histórico existente v2 não é substituído pelo seed em atualizações.
+Não houve login nas contas reais nem leitura/escrita de dados reais do Firebase nesta validação. As regras implantadas no projeto precisam ser conferidas e o teste ponta a ponta com a conta de teste deve ser repetido após publicar.
 
-## Verificação local
+## Publicação e referências
 
-Sirva a pasta por HTTP local, por exemplo `python3 -m http.server 8080`, e abra http://localhost:8080. Não abra index.html diretamente pelo gerenciador de arquivos: módulos e service worker exigem servidor; no iPhone, use HTTPS.
+GitHub Pages: branch main, pasta /(root). O arquivo .nojekyll acompanha o pacote. URL: https://gugasaito.github.io/trainning_app/
 
-Conferências automatizadas realizadas: sintaxe JavaScript; 23 exercícios e 76 registros extraídos da planilha; backup de ida e volta; rejeição de duplicatas e versão incompatível; distinção de zero e ausência; cálculo de série incompleta e tempo de prancha. Agachamento A, semana 1: 620 kg × reps e uma série incompleta. Prancha frontal, semana 1: 180 s.
-
-Limites da verificação: não houve teste visual em navegador nem instalação em iPhone físico nesta execução. Teste recomendado após publicar: editar uma série, recarregar, conferir o histórico e gráfico, exportar/restaurar backup e reabrir em modo avião.
-
-## Proveniência e continuidade
-
-Fonte: treino_full_body_progressao_atualizado.xlsx. O hash SHA-256 da fonte está em seed.json. Nomes, metas, séries e registros foram extraídos das abas A, B e C. Datas não foram inventadas. O ZIP anterior full-body-tracker-pwa.zip não estava disponível; esta implementação reconstrói os recursos descritos no histórico acessível. Não foi possível comparar funcionalidades adicionais nem garantir migração de armazenamento da versão antiga.
+Firebase: https://firebase.google.com/docs/firestore/security/rules-conditions
+Transações: https://firebase.google.com/docs/firestore/manage-data/transactions
+Instalar no iPhone: Safari → Compartilhar → Adicionar à Tela de Início.
