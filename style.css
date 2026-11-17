@@ -18,3 +18,7 @@ header{background:#050505}.brand{letter-spacing:normal}.brand img{display:block;
 #account-header .actions{gap:4px}#account-header button{font-size:5.5px;line-height:1.5;min-height:22px;padding:3.5px 5px;border-radius:6px;border-width:.5px}
 
 .brand{flex-direction:column;align-items:flex-start;gap:4px}#app-version{display:block;width:100%;max-width:300px;text-align:right;font-size:10px;line-height:1.5;letter-spacing:0;font-weight:400;color:#f5e9d4;overflow-wrap:anywhere}#app-version[hidden]{display:none}.beta-tag{display:inline-block;margin-left:4px;padding:0 5px;border:1px solid #ff6a00;border-radius:4px;color:#ff8b36;font-size:9px;font-weight:600}
+
+.workout-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.workout-controls>button{min-height:46px}.active-clock{display:flex;flex-direction:column;gap:2px;margin-right:6px}.active-clock small{font-size:11px}.active-clock strong{font-size:22px;font-variant-numeric:tabular-nums}@media(max-width:650px){.workout-controls{flex:1 1 100%;justify-content:flex-start}}
+
+@media(max-width:650px){.toolbar .tabs{flex:1 1 100%}.workout-controls{flex:1 1 180px}.workout-controls .primary{white-space:normal}}
