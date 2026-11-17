@@ -8,6 +8,7 @@ export function checked(value,exercises){
  const ids=new Set();
  for(const s of sessions){if(!s||typeof s.id!=='string'||ids.has(s.id)||!['A','B','C'].includes(s.day)||!Number.isInteger(s.week)||s.week<1||s.week>520||!['running','paused','finished'].includes(s.status)||!Number.isFinite(s.elapsed)||s.elapsed<0||!Number.isFinite(s.startedAt)||(s.status==='running'&&!Number.isFinite(s.since))||(s.status==='finished'&&!Number.isFinite(s.finishedAt)))throw Error('Sessão inválida.');ids.add(s.id);}
  if(sessions.filter(s=>s.status!=='finished').length>1)throw Error('Há mais de um treino ativo.');
+ for(const r of state.records){if(r.sessionId){const session=sessions.find(s=>s.id===r.sessionId),exercise=exercises.find(e=>e.id===r.exercise);if(!session||session.week!==r.week||session.day!==exercise.day)throw Error('Registro não corresponde à sessão.');}}
  return {...state,sessions:structuredClone(sessions)};
 }
 export const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
