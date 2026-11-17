@@ -1,3 +1,7 @@
+# Versão atual: 3.2 — academias e cargas
+
+Consulte ACADEMIAS-E-CARGAS.md para atualizar e usar a seleção de academia e referências por série.
+
 # Full Body Tracker 3.0 — várias contas
 
 Cada conta Google tem registros, histórico, gráficos e sessões próprios. Contas novas começam vazias; os 23 exercícios A/B/C são comuns. O pacote público não contém o histórico da planilha pessoal.
