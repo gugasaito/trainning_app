@@ -15,6 +15,7 @@ export function validate(input,exercises){
  if(input?.app!=='full-body-tracker'||input.version!==2||!Array.isArray(input.records)||input.records.length>50000)throw Error('Formato de backup incompatível. Use um backup v2 deste aplicativo.');
  const keys=new Set();
  for(const r of input.records){
+  if(r.weekYear!==undefined&&(!Number.isInteger(r.weekYear)||r.weekYear<1900||r.weekYear>9999))throw Error('Ano da semana inválido.');
   if(r.equipment!==undefined&&(typeof r.equipment!=='string'||r.equipment.length>150))throw Error('Aparelho inválido.');
   if(r.sessionId!==undefined&&r.sessionId!==null&&(typeof r.sessionId!=='string'||!r.sessionId||r.sessionId.length>150))throw Error('Sessão do registro inválida.');
   const e=exercises.find(e=>e.id===r.exercise),key=r.exercise+':'+r.week+':'+(r.sessionId??'legacy');
@@ -22,7 +23,7 @@ export function validate(input,exercises){
   keys.add(key);
   for(const s of r.sets)for(const k of ['value','reps'])if(s[k]!==null&&(typeof s[k]!=='number'||!Number.isFinite(s[k])||s[k]<0||s[k]>100000||(k==='reps'&&!Number.isInteger(s[k]))))throw Error('Backup contém valores inválidos.');
  }
- return {app:'full-body-tracker',version:2,records:input.records.map(r=>({exercise:r.exercise,week:r.week,...(r.equipment!==undefined?{equipment:r.equipment}:{}),...(r.sessionId?{sessionId:r.sessionId}:{}),sets:r.sets.map(s=>({value:s.value,reps:s.reps})),note:r.note,date:r.date,source:typeof r.source==='string'?r.source:'backup'}))};
+ return {app:'full-body-tracker',version:2,records:input.records.map(r=>({exercise:r.exercise,week:r.week,...(r.weekYear!==undefined?{weekYear:r.weekYear}:{}),...(r.equipment!==undefined?{equipment:r.equipment}:{}),...(r.sessionId?{sessionId:r.sessionId}:{}),sets:r.sets.map(s=>({value:s.value,reps:s.reps})),note:r.note,date:r.date,source:typeof r.source==='string'?r.source:'backup'}))};
 }
 
 export function exerciseWeek(records,e,week){return metrics({sets:records.filter(r=>r.exercise===e.id&&r.week===week).flatMap(r=>r.sets)},e);}

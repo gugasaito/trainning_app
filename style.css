@@ -22,3 +22,5 @@ header{background:#050505}.brand{letter-spacing:normal}.brand img{display:block;
 .workout-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.workout-controls>button{min-height:46px}.active-clock{display:flex;flex-direction:column;gap:2px;margin-right:6px}.active-clock small{font-size:11px}.active-clock strong{font-size:22px;font-variant-numeric:tabular-nums}@media(max-width:650px){.workout-controls{flex:1 1 100%;justify-content:flex-start}}
 
 @media(max-width:650px){.toolbar .tabs{flex:1 1 100%}.workout-controls{flex:1 1 180px}.workout-controls .primary{white-space:normal}}
+
+.automatic-week{display:flex;flex-direction:column;gap:5px;padding:8px 4px}.automatic-week small{font-size:11px}.automatic-week strong{font-size:14px;white-space:nowrap}
