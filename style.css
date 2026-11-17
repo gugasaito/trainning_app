@@ -3,3 +3,5 @@
 .session-fields{border:0;padding:0;margin:20px 0;min-width:0}.session-fields:disabled{opacity:.55}
 
 .load-reference{font-size:12px;color:#496c3d;margin:2px 0 12px 48px;line-height:1.5}
+
+.previous-performance{background:#eef4e4;border:1px solid #dce7cc;border-radius:12px;padding:14px;margin:18px 0}.previous-performance h4{margin:0 0 6px;font-size:15px}.previous-performance p{font-size:12px;margin:0 0 8px;color:#526b40}.previous-performance td,.previous-performance th{padding:9px 4px;font-size:12px}.previous-performance strong{font-size:16px}.previous-performance td:last-child{font-size:11px}input::placeholder{color:#74816c;opacity:1}
