@@ -1,4 +1,4 @@
-const CACHE='full-body-v3-20261117-9';
+const CACHE='full-body-v3-20261117-10';
 const ASSETS=['./','./index.html','./style.css','./app.mjs','./core.mjs','./tracker.mjs','./accounts.mjs','./history-actions.mjs','./gyms.mjs','./cloud.mjs','./session.mjs','./training-time.mjs','./sync-ui.mjs','./seed.json','./manifest.webmanifest','./logo-full-body.png','./icon-180-v35.png','./icon-192-v35.png','./icon-512-v35.png','./icon-180.png','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS))));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('full-body-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
