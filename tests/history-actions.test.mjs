@@ -1,0 +1,13 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
+import {blank,checked,Accounts} from '../accounts.mjs';
+import {deleteWorkout,restoreWorkout} from '../history-actions.mjs';
+import {weekly} from '../core.mjs';import {references} from '../gyms.mjs';
+const ex=JSON.parse(fs.readFileSync(new URL('../seed.json',import.meta.url))).exercises;
+const session=(id,at)=>({id,day:'A',week:1,startedAt:at,finishedAt:at+100,elapsed:100,status:'finished',since:null,gymId:'g'});
+const row=(sessionId,v=10)=>({exercise:'A1',week:1,sessionId,sets:[{value:v,reps:5}],note:'',date:''});
+const fixture=()=>({...blank(),gyms:[{id:'g',name:'Centro'}],sessions:[session('a',1),session('b',200)],records:[row('a'),row('b',20)]});
+test('delete only chosen session and its sets; recalculate volume and references',()=>{const d=fixture(),next=deleteWorkout(d,{id:'b',title:'B'},ex);assert.equal(d.sessions.length,2);assert.equal(next.sessions[0].id,'a');assert.equal(next.records.length,1);assert.equal(weekly(next.records,ex,1).total,50);assert.equal(next.deletedWorkouts[0].sessions[0].elapsed,100);assert.equal(references(next,ex[0],session('next',500),'',1)[0].value,10);});
+test('undo restores sets duration and gym; full backup roundtrip includes trash',()=>{const d=fixture(),next=deleteWorkout(d,{id:'a'},ex);const loaded=checked(JSON.parse(JSON.stringify(next)),ex);assert.equal(loaded.deletedWorkouts.length,1);const restored=restoreWorkout(loaded,loaded.deletedWorkouts[0].id,ex);assert.equal(restored.deletedWorkouts.length,0);assert.deepEqual(restored.sessions,d.sessions);assert.equal(weekly(restored.records,ex,1).total,150);});
+test('cannot delete active session; no missing target deletion',()=>{const d=fixture();d.sessions[0].status='running';assert.throws(()=>deleteWorkout(d,{id:'a'},ex));assert.throws(()=>deleteWorkout(d,{id:'missing'},ex));});
+test('legacy delete is limited to workout day and week; undo refuses duplicates',()=>{const d={...blank(),records:[{...row(undefined),sessionId:undefined},{...row(undefined),exercise:'B1',sessionId:undefined}]};const next=deleteWorkout(d,{id:'legacy',day:'A',week:1},ex);assert.equal(next.records[0].exercise,'B1');next.records.push(d.records[0]);assert.throws(()=>restoreWorkout(next,next.deletedWorkouts[0].id,ex));assert.equal(next.deletedWorkouts.length,1);});
+test('trash is isolated across accounts',()=>{const map=new Map(),a=new Accounts({getItem:k=>map.get(k)??null,setItem:(k,v)=>map.set(k,v)},ex);a.open('A');a.edit(deleteWorkout(fixture(),{id:'a'},ex));a.open('B');assert.equal(a.data().deletedWorkouts.length,0);a.open('A');assert.equal(a.data().deletedWorkouts.length,1);});
