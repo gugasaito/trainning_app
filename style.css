@@ -24,3 +24,5 @@ header{background:#050505}.brand{letter-spacing:normal}.brand img{display:block;
 @media(max-width:650px){.toolbar .tabs{flex:1 1 100%}.workout-controls{flex:1 1 180px}.workout-controls .primary{white-space:normal}}
 
 .automatic-week{display:flex;flex-direction:column;gap:5px;padding:8px 4px}.automatic-week small{font-size:11px}.automatic-week strong{font-size:14px;white-space:nowrap}
+
+#health-auto{width:auto;margin-right:8px}#health-session{margin:15px 0}nav button{min-width:62px}@media(max-width:380px){nav button{min-width:54px;padding:12px 6px}}

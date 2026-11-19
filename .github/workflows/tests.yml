@@ -1,0 +1,25 @@
+name: Testes do Tracker Produção
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  regressao:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Testar com dados fictícios
+        run: node --test --test-reporter=spec --test-reporter=junit --test-reporter-destination=stdout --test-reporter-destination=resultados.xml tests/*.test.mjs
+      - name: Guardar relatório
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: resultados-testes-producao
+          path: resultados.xml
