@@ -13,9 +13,10 @@ export function healthSummary(value){
  return {provider,workoutId,activityType,source,startedAt,endedAt,updatedAt,activeCaloriesKcal,heartRateAverageBpm,heartRateMinBpm,heartRateMaxBpm,...(value.heartRateTimeline===undefined?{}:{heartRateTimeline:heartTimeline(value.heartRateTimeline,startedAt,endedAt)})};
 }
 export function overlap(session,workout){return Math.max(0,Math.min(session.finishedAt,workout.endedAt)-Math.max(session.startedAt,workout.startedAt));}
+export function ownedWorkouts(data,exceptSessionId=null){return new Set([...(data.sessions??[]).filter(s=>s.id!==exceptSessionId).map(s=>s.health?.workoutId),...(data.activities??[]).map(a=>a.health?.workoutId),...(data.deletedWorkouts??[]).flatMap(t=>(t.sessions??[]).map(s=>s.health?.workoutId))].filter(Boolean));}
 export function automaticCandidate(data,session,workouts){
  if(session.healthOptOut||session.status!=='finished'||!Number.isFinite(session.finishedAt)||session.finishedAt<=session.startedAt)return null;
- const owned=new Set(data.sessions.filter(s=>s.id!==session.id&&s.health).map(s=>s.health.workoutId));
+ const owned=ownedWorkouts(data,session.id);
  const valid=workouts.map(healthSummary).filter(h=>!owned.has(h.workoutId)&&overlap(session,h)>0);
  if(session.health)return valid.find(h=>h.workoutId===session.health.workoutId)??null;
  // Conservative association: exactly one workout, covering at least 80% of both intervals.
@@ -25,7 +26,7 @@ export function automaticCandidate(data,session,workouts){
 export function attachHealth(data,sessionId,summary){
  const next=structuredClone(data),s=next.sessions.find(s=>s.id===sessionId),h=healthSummary(summary);
  if(!s||s.status!=='finished'||overlap(s,h)<=0)throw Error('O treino do Saúde não coincide com esta sessão finalizada.');
- if(next.sessions.some(other=>other.id!==sessionId&&other.health?.workoutId===h.workoutId))throw Error('Este treino do Saúde já está associado a outra sessão.');
+ if(ownedWorkouts(next,sessionId).has(h.workoutId))throw Error('Este treino do Saúde já está associado a outra sessão.');
  // A device on the previous version must not erase an already collected timeline.
  if(h.heartRateTimeline===undefined&&s.health?.workoutId===h.workoutId&&s.health.heartRateTimeline!==undefined)h.heartRateTimeline=structuredClone(s.health.heartRateTimeline);
  s.health=h;delete s.healthOptOut;return next;

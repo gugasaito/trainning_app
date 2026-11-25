@@ -1,3 +1,4 @@
+import {validateActivities} from './activities.mjs';
 import {catalogFor,validateCatalog} from './plans.mjs';
 import {validateExerciseIntervals} from './exercise-time.mjs';
 import {healthSummary} from './health-model.mjs';
@@ -19,7 +20,8 @@ export function checked(value,exercises){
  for(const r of state.records){if(r.sessionId){const session=sessions.find(s=>s.id===r.sessionId),exercise=exercises.find(e=>e.id===r.exercise);if(!session||session.week!==r.week||session.day!==exercise.day||r.weekYear!==session.weekYear)throw Error('Registro não corresponde à sessão.');}}
  const deletedWorkouts=value.deletedWorkouts??[];if(!Array.isArray(deletedWorkouts)||deletedWorkouts.length>1000)throw Error('Lixeira inválida ou cheia. Exporte um backup.');const trashIds=new Set();
  for(const item of deletedWorkouts){if(!item||typeof item.id!=='string'||item.id.length>150||trashIds.has(item.id)||!Number.isFinite(item.deletedAt)||typeof item.title!=='string'||item.title.length>500||!Array.isArray(item.records)||!Array.isArray(item.sessions)||item.sessions.some(s=>s.status!=='finished'))throw Error('Treino excluído inválido.');trashIds.add(item.id);checked({app:'full-body-tracker',version:2,records:item.records,sessions:item.sessions,gyms},exercises);}
- return {...state,...(value.catalog?{catalog:structuredClone(value.catalog)}:{}),...(healthSettings?{healthSettings:{enabled:healthSettings.enabled,autoSync:healthSettings.autoSync,consentAt:healthSettings.consentAt,...(healthSettings.timelineEnabled===undefined?{}:{timelineEnabled:healthSettings.timelineEnabled})}}:{}),...(value.programStartDate?{programStartDate:value.programStartDate}:{}),sessions:structuredClone(sessions),gyms:structuredClone(gyms),deletedWorkouts:structuredClone(deletedWorkouts)};
+ const activities=validateActivities(value);
+ return {...state,...(value.activities!==undefined?{activities}:{}),...(value.catalog?{catalog:structuredClone(value.catalog)}:{}),...(healthSettings?{healthSettings:{enabled:healthSettings.enabled,autoSync:healthSettings.autoSync,consentAt:healthSettings.consentAt,...(healthSettings.timelineEnabled===undefined?{}:{timelineEnabled:healthSettings.timelineEnabled})}}:{}),...(value.programStartDate?{programStartDate:value.programStartDate}:{}),sessions:structuredClone(sessions),gyms:structuredClone(gyms),deletedWorkouts:structuredClone(deletedWorkouts)};
 }
 export const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 export function remoteEnvelope(remote,exercises){return {data:checked({...remote.state,sessions:remote.sessions??remote.state?.sessions??[]},exercises),revision:Number.isInteger(remote.revision)?remote.revision:0};}
