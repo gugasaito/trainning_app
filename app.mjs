@@ -1,3 +1,4 @@
+import {activityHub,activityHistory} from './activities-ui.mjs';
 import {workoutMarkup,exerciseMarkup,planDialog,draftWorkout,duration} from './training-ui.mjs';
 import {catalogFor,plansFor,createPlan,addCardio} from './plans.mjs';
 import {beginWorkout,beginExercise,setDone,exerciseDuration,recordCardioDuration} from './workout-actions.mjs';
@@ -46,6 +47,7 @@ function render(){if(fatal)return;seed={...source,exercises:catalogFor(state,sou
  }
  if(page==='health')$('#app').innerHTML=healthPage(state);
  if(page==='backup')$('#app').innerHTML=`<div class="eyebrow">SEUS DADOS</div><h1>Guarde sua evolução.</h1><article class="card"><h2>Backup JSON</h2><p class="muted">O histórico desta conta é salvo no aparelho e enviado à nuvem quando há conexão. Confira a confirmação de sincronização acima. Exporte antes de limpar dados, mudar de endereço ou trocar de iPhone.</p><button class="primary" id="export">Exportar backup</button><hr><h3>Restaurar backup</h3><p class="muted">A restauração substitui o histórico desta versão após sua confirmação. Aceita o formato v2; backups antigos precisam de adaptação.</p><label>Selecione um arquivo JSON<input id="restore" type="file" accept=".json,application/json"></label><div id="import-review"></div></article><article class="card"><h2>Sobre os dados</h2><p class="muted">23 exercícios do programa A/B/C. Contas novas começam sem registros. Importe seu backup JSON para recuperar uma planilha ou histórico anterior. O volume soma carga × repetições das séries completas; pranchas somam segundos. A média usa as cargas/tempos preenchidos, como na planilha.</p><p class="muted">Uma entrada por exercício em cada sessão. O volume semanal soma todas as sessões e o histórico anterior. Novas sessões recebem a semana progressiva pela data de início; a contagem avança às segundas-feiras. As datas são opcionais. O backup completo inclui as durações dos treinos.</p><h3>Instalar no iPhone</h3><p class="muted">Abra o endereço HTTPS no Safari → Compartilhar → Adicionar à Tela de Início → Abrir como App (se disponível). Aguarde “Disponível offline” antes de usar sem internet.</p></article>`;
+ if(['train','history','health'].includes(page)){const hub=activityHub(state);if(page==='history')$('#app').insertAdjacentHTML('afterbegin',hub+activityHistory(state));else if(page==='health'||!active)$('#app').insertAdjacentHTML('beforeend',hub);}
  enhanceHeartCharts($('#app'));
 }
 document.addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b||fatal||!state)return;if(b.dataset.expand){const id=b.dataset.expand;if(openExercises.has(id))openExercises.delete(id);else openExercises.add(id);render();return;}
@@ -67,9 +69,11 @@ if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').then(
 
 let displayedDay=localDate();setInterval(()=>{const today=localDate();if(today!==displayedDay){displayedDay=today;if(page==='train')render();}},30000);
 
-window.addEventListener('fullbody:health-ui',()=>{if(page==='health')render();});
+window.addEventListener('fullbody:health-ui',()=>{if(page==='health'&&!document.querySelector('dialog[open]'))render();});
 
 document.addEventListener('submit',ev=>{if(ev.target.id!=='new-plan')return;ev.preventDefault();try{const form=ev.target,draft={teacher:form.elements.teacher.value,name:form.elements.name.value,workouts:[...form.querySelectorAll('.draft-workout')].map(f=>({name:f.querySelector('[data-draft-name]').value,subtitle:f.querySelector('[data-draft-subtitle]').value,exercises:f.querySelector('[data-draft-exercises]').value}))};const result=createPlan(state,draft);if(save(result.data)){planId=result.plan.id;day=result.plan.workouts[0].id;render();message('Plano adicionado a esta conta.');}}catch(e){message(e.message);}});
 setInterval(()=>{if(!state||page!=='train')return;const session=state.sessions.find(s=>s.status!=='finished');if(!session)return;const clock=document.querySelector('[data-session-clock]');if(clock)clock.textContent=duration(elapsed(session));for(const el of document.querySelectorAll('[data-exercise-clock],[data-cardio-clock]'))el.textContent=duration(exerciseDuration(session,el.dataset.exerciseClock||el.dataset.cardioClock));for(const el of document.querySelectorAll('[data-cardio-progress]'))el.value=exerciseDuration(session,el.dataset.cardioProgress);},1000);
 
 document.addEventListener('submit',ev=>{if(!['new-gym','new-cardio'].includes(ev.target.id))return;ev.preventDefault();try{const form=ev.target,next=form.id==='new-gym'?addGym(state,form.elements.name.value):addCardio(state,day,form.elements.name.value,Number(form.elements.minutes.value));if(save(next)){if(form.id==='new-gym')selectedGym=next.gyms.at(-1).id;render();}}catch(e){message(e.message);}});
+
+window.addEventListener('fullbody:activities-ui',()=>{state=getData();if(!document.querySelector('dialog[open]')&&!document.activeElement?.matches('input,textarea,select'))render();});
