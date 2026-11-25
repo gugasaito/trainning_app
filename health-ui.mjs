@@ -1,3 +1,4 @@
+import {catalogFor} from './plans.mjs';
 import {heartChart} from './heart-chart.mjs';
 import {isNative,nativeCall} from './native-bridge.mjs';
 import {healthSummary,attachHealth,automaticCandidate} from './health-model.mjs';
@@ -7,7 +8,7 @@ let selected='',candidates=[],info='',busy=false,owner=null,lastRefresh=0;
 const update=()=>window.dispatchEvent(new Event('fullbody:health-ui'));
 const date=n=>new Date(n).toLocaleString('pt-BR');
 const value=n=>n===null?'Não disponível':n.toLocaleString('pt-BR',{maximumFractionDigits:1});
-export function healthCard(h,session=null){if(!h)return '';const plotted=h.heartRateTimeline?.points?.length>0;return `<section class="previous-performance"><h4>Apple Saúde · ${esc(h.activityType)}</h4><p>Calorias ativas: <strong>${value(h.activeCaloriesKcal)} kcal</strong></p>${plotted?'':`<p>Frequência cardíaca média: <strong>${value(h.heartRateAverageBpm)}${h.heartRateAverageBpm===null?'':' bpm'}</strong> · Mín.: ${value(h.heartRateMinBpm)} · Máx.: ${value(h.heartRateMaxBpm)}</p>`}${heartChart(h,session,seed.exercises)}<p class="hr-source">Fonte: ${esc(h.source)} · Atualizado: ${date(h.updatedAt)}</p></section>`;}
+export function healthCard(h,session=null){if(!h)return '';const plotted=h.heartRateTimeline?.points?.length>0;return `<section class="previous-performance"><h4>Apple Saúde · ${esc(h.activityType)}</h4><p>Calorias ativas: <strong>${value(h.activeCaloriesKcal)} kcal</strong></p>${plotted?'':`<p>Frequência cardíaca média: <strong>${value(h.heartRateAverageBpm)}${h.heartRateAverageBpm===null?'':' bpm'}</strong> · Mín.: ${value(h.heartRateMinBpm)} · Máx.: ${value(h.heartRateMaxBpm)}</p>`}${heartChart(h,session,catalogFor(getData(),seed.exercises))}<p class="hr-source">Fonte: ${esc(h.source)} · Atualizado: ${date(h.updatedAt)}</p></section>`;}
 
 export function healthPage(data){
  if(!isNative())return '<h1>Apple Saúde.</h1><p>Disponível na versão iOS do Full Body Tracker. O app instalado pelo Safari não acessa diretamente o Saúde.</p><p>Os resumos já associados à sua conta continuam visíveis no Histórico.</p>';
