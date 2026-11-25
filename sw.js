@@ -1,5 +1,5 @@
-const CACHE='full-body-prod-v3153-20261123-1';
-const ASSETS=['./','./index.html','./style.css','./app.mjs','./core.mjs','./native-bridge.mjs','./health-model.mjs','./heart-chart.mjs','./exercise-time.mjs','./health-ui.mjs','./calendar.mjs','./program-weeks.mjs','./tracker.mjs','./accounts.mjs','./history-actions.mjs','./gyms.mjs','./cloud.mjs','./session.mjs','./training-time.mjs','./sync-ui.mjs','./seed.json','./manifest.webmanifest','./logo-full-body.png','./icon-180-v35.png','./icon-192-v35.png','./icon-512-v35.png','./icon-180.png','./icon-192.png','./icon-512.png'];
+const CACHE='full-body-prod-v3160-20261124-1';
+const ASSETS=['./','./index.html','./style.css','./app.mjs','./core.mjs','./native-bridge.mjs','./health-model.mjs','./heart-chart.mjs','./exercise-time.mjs','./training-ui.mjs','./plans.mjs','./workout-actions.mjs','./health-ui.mjs','./calendar.mjs','./program-weeks.mjs','./tracker.mjs','./accounts.mjs','./history-actions.mjs','./gyms.mjs','./cloud.mjs','./session.mjs','./training-time.mjs','./sync-ui.mjs','./seed.json','./manifest.webmanifest','./logo-full-body.png','./icon-180-v35.png','./icon-192-v35.png','./icon-512-v35.png','./icon-180.png','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS))));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('full-body-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{
