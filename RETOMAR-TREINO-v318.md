@@ -1,4 +1,4 @@
-# FB-027 — Retomar treino finalizado — v3.18.0 PRODUÇÃO
+# FB-027 — Retomar treino finalizado — v3.18.0 BETA
 
 Preparado localmente em 26/11/2026; não publicado. Esta cópia inclui os recursos anteriores e a correção v3.17.1 de horários fracionários do Saúde.
 
@@ -36,24 +36,21 @@ O modelo mantém o resumo principal legado e healthWorkouts com todos os registr
 
 130 testes automatizados passaram com dados fictícios. Incluem retomada, preservação de séries/contas/backup, associação por períodos, soma parcial de calorias, lacunas reais, média das amostras, 360 pontos sem perda dos originais, duplicação, sobreposição, ambiguidades e desvinculação individual.
 
-Prévia mobile 390 × 844 validou a retomada com tempo acumulado e a associação manual de um segundo período a um primeiro já salvo. O Histórico mostrou uma sessão, 500 kcal, 120 minutos de Saúde e um gráfico com grupos de amostras separados pela lacuna. Não houve acesso a dados reais ou Firebase real. Falta validar o fluxo com HealthKit real no iPhone, após publicação de produção autorizada.
+Prévia mobile 390 × 844 validou a retomada com tempo acumulado e a associação manual de um segundo período a um primeiro já salvo. O Histórico mostrou uma sessão, 500 kcal, 120 minutos de Saúde e um gráfico com grupos de amostras separados pela lacuna. Não houve acesso a dados reais ou Firebase real. Falta validar o fluxo com HealthKit real no iPhone, após publicação beta autorizada.
 
 ## Destino proposto
 
-Produção: repositório gugasaito/trainning_app e site https://gugasaito.github.io/trainning_app/. Firebase full-body-tracker-b4a42; armazenamento full-body-tracker:account-v3:. Sem alteração Swift. Push, PR, merge e deploy exigem autorização específica e não foram executados.
+Somente beta: repositório gugasaito/trainning_app_beta e site https://gugasaito.github.io/trainning_app_beta/. Firebase full-body-tracker-beta; armazenamento fbt-beta:account-v3:. Sem alteração Swift. Push, PR, merge e deploy exigem autorização específica e não foram executados.
 
 ## Validação e retorno
 
-Antes de aplicar, exporte backup de produção e guarde os arquivos publicados. Valide primeiro com um treino fictício contendo séries e um exercício concluído. Finalize, retome e confira preservação, tempo e nova finalização. Teste também o bloqueio com outro treino ativo e reabra o app para conferir persistência.
+Antes de aplicar, exporte backup beta e guarde os arquivos publicados. Valide primeiro com um treino fictício contendo séries e um exercício concluído. Finalize, retome e confira preservação, tempo e nova finalização. Teste também o bloqueio com outro treino ativo e reabra o app para conferir persistência.
 
-Se houver problema, exporte backup atualizado e restaure os arquivos da versão de produção anterior com um novo identificador de cache. Não restaure backup antigo por cima de novos registros. Uma sessão já retomada deve ser finalizada ou pausada antes de trocar arquivos. Não é necessário apagar dados ou desinstalar. As retomadas não alteram a identificação das séries existentes.
+Se houver problema, exporte backup atualizado e restaure os arquivos da versão beta anterior com um novo identificador de cache. Não restaure backup antigo por cima de novos registros. Uma sessão já retomada deve ser finalizada ou pausada antes de trocar arquivos. Não é necessário apagar dados ou desinstalar. As retomadas não alteram a identificação das séries existentes.
 
 
 ## Compatibilidade de retorno e outros aparelhos
 
 Antes de associar vários períodos, confirme v3.18.0 em todos os clientes usados pela conta de teste. Clientes antigos não conhecem a coleção completa e podem substituir apenas o resumo principal, causando inconsistência. Não continue gravando dados dessa conta em uma versão antiga após unificar períodos. Em caso de falha, exporte backup atualizado e suspenda gravações; priorize correção mantendo leitura de healthWorkouts e resumptions. Voltar para o leitor antigo depois de novas associações não é um retorno seguro. Não sobrescreva dados atuais com um backup antigo.
 
-O pacote inicial v3.18.0 que continha somente retomada foi substituído por FB027-Web-PRODUCAO-Retomar-Unificar-Saude-v3.18.0.zip. O cache deste pacote é full-body-prod-v3180-20261126-1. Continua não publicado por este trabalho.
-
-
-Validação no beta real confirmada pelo usuário em 26/11/2026: os dois treinos foram associados automaticamente e unificados após habilitar Atualizar automaticamente e voltar ao app. A configuração de produção também passou nos 130 testes locais com dados fictícios. A versão de produção deste pacote ainda não foi publicada por este trabalho.
+O pacote inicial v3.18.0 que continha somente retomada foi substituído por FB027-Web-BETA-Retomar-Unificar-Saude-v3.18.0.zip. O cache deste pacote é full-body-beta-v3180-20261126-2. Continua não publicado por este trabalho.
