@@ -55,3 +55,21 @@ nav button:before{display:none}nav button svg{display:block;width:25px;height:25
 .resume-finished{border-color:#ff7900;color:#a94700;margin-bottom:10px}#resume-workout-dialog{width:min(540px,calc(100% - 32px));box-sizing:border-box;max-height:85dvh;overflow:auto;border:1px solid #ffd4b0;border-radius:22px;padding:22px}#resume-workout-dialog::backdrop{background:#0008}#resume-workout-dialog .actions{display:flex;gap:12px;flex-wrap:wrap}
 
 .hr-session-gap{fill:#b7b7b7;opacity:.18}.health-original{padding:12px 0;border-bottom:1px solid #d6dfd0}
+
+/* Sprint 01 — Histórico: apresentação sem alteração dos dados. */
+.history-page .history-week{background:#fff0e2;border-color:#f1c5a3}
+.history-page .week-heading h2{color:#9c3b00}
+.history-page .week-heading p{color:#854221}
+.history-card-heading{display:grid;gap:7px;padding-bottom:16px;border-bottom:1px solid #ede4dc;margin-bottom:16px}
+.history-card-heading h2{margin:0;font-size:23px;line-height:1.25;overflow-wrap:anywhere}
+.history-card-heading .history-card-when{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;margin:0;font-size:14px;font-weight:650;color:#55473d;font-variant-numeric:tabular-nums}
+.history-card-heading .history-card-gym{font-size:14px;line-height:1.5;color:#766050;margin:0;overflow-wrap:anywhere}
+.history-exercise-list{padding-top:8px}.history-exercise-detail{padding:12px 0;border-top:1px solid #ecdfd3}
+.history-exercise-detail p{margin:6px 0;font-size:13px;line-height:1.6}.history-equipment{display:block;margin-top:4px;font-size:12px;color:#746050}
+.history-page .exercise-completed-summary{background:#ffead5;border:1px solid #f2bd8f;color:#933800}
+.history-page .exercise-completed-summary strong{color:#933800}
+.history-page [data-activity-new]{background:#ce4a00;border-color:#ce4a00;color:#fff}
+.history-page .hr-horizon-compact{margin-top:14px}
+.history-page .hr-horizon-compact .hr-hero{background:#ce4a00;color:#fff}
+.history-page .hr-horizon-compact .hr-hero strong,.history-page .hr-horizon-compact .hr-hero span,.history-page .hr-horizon-compact .hr-hero small{color:#fff}
+@media(max-width:430px){.history-page .history-workout{padding:18px}.history-card-heading h2{font-size:22px}.history-card-heading .history-card-when,.history-card-heading .history-card-gym{font-size:13px}}
