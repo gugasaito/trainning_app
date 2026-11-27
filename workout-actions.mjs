@@ -29,6 +29,6 @@ export function exerciseDuration(session,id,now=Date.now()) {return (session?.ex
 
 export function recordCardioDuration(data,sessionId,exercises,now=Date.now()){
  const next=structuredClone(data),s=next.sessions.find(s=>s.id===sessionId);if(!s)return next;
- for(const e of exercises.filter(e=>e.day===s.day&&e.kind==='cardio')){const ms=exerciseDuration(s,e.id,now);if(!ms)continue;let r=next.records.find(r=>r.sessionId===s.id&&r.exercise===e.id);if(!r){r={exercise:e.id,week:s.week,sessionId:s.id,...(s.weekYear===undefined?{}:{weekYear:s.weekYear}),equipment:'',sets:[{value:null,reps:null}],note:'',date:'',source:'app'};next.records.push(r);}if(r.sets[0].value===null)r.sets[0].value=Math.floor(ms/1000);}
+ for(const e of exercises.filter(e=>e.day===s.day&&e.kind==='cardio')){const ms=exerciseDuration(s,e.id,now);if(!ms)continue;let r=next.records.find(r=>r.sessionId===s.id&&r.exercise===e.id);if(!r){r={exercise:e.id,week:s.week,sessionId:s.id,...(s.weekYear===undefined?{}:{weekYear:s.weekYear}),equipment:'',sets:[{value:null,reps:null}],note:'',date:'',source:'app'};next.records.push(r);}const lastFinish=s.resumptions?.at(-1)?.finishedAt;const previousMs=lastFinish===undefined?null:(s.exerciseIntervals??[]).filter(i=>i.exerciseId===e.id&&i.startedAt<lastFinish).reduce((n,i)=>n+Math.max(0,Math.min(i.endedAt??lastFinish,lastFinish)-i.startedAt),0);if(r.sets[0].value===null||(r.source==='app'&&previousMs!==null&&r.sets[0].value===Math.floor(previousMs/1000)))r.sets[0].value=Math.floor(ms/1000);}
  return next;
 }
