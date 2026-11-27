@@ -1,35 +1,42 @@
-# v3.17.1 — Atividades avulsas — PRODUÇÃO
+# Atividades avulsas — v3.17.1 BETA
 
-Pacote preparado localmente em 25/11/2026. Não publicado.
+Preparado localmente em 25/11/2026. Nenhum push, PR, merge ou deploy foi realizado.
 
-## Alterações
+## Comportamento
 
-- Cadastro manual de atividade: tipo, início/fim, calorias opcionais e observações, sem exigir sessão do Saúde ou academia.
-- Busca por data no iOS: sessões do Saúde ainda não registradas podem ser mantidas como estão ou receber um nome no Tracker, como Outros → Futevôlei.
-- Sugestões ao voltar ao app, com a integração e atualização automática habilitadas. Nenhuma importação silenciosa; busca do dia, sem execução contínua com o app fechado.
-- Histórico com seção de atividades avulsas. Tipo original, horários, calorias, fonte e telemetria do Saúde preservados; nenhuma escrita no Saúde.
-- Deduplicação entre atividades, treinos e lixeira. Backup, sincronização e isolamento entre contas incluem as atividades. Não entram no volume de musculação.
+- Na aba Histórico, em “Além do treino”, use “＋ Atividade manual”. Informe tipo, início/fim, calorias opcionais e observações. Não exige academia, plano ou sessão do Saúde. Calorias vazias são não informadas; zero explícito é preservado.
+- No iOS, com a integração autorizada, use “Buscar no Saúde” e escolha a data. A consulta é limitada ao dia selecionado, respeitando o limite nativo de 48 horas.
+- Atividades ainda não registradas oferecem “Manter como está” ou “Editar tipo e registrar”. A escolha grava nesta conta e sincroniza com o Firebase beta conforme o consentimento existente.
+- Com “Atualizar automaticamente ao finalizar e ao voltar ao app” habilitado, voltar ao app busca sugestões do dia. São sugestões, nunca importações silenciosas. Não há consulta contínua com o app fechado; sessões disponibilizadas com atraso podem ser buscadas novamente.
+- Correspondências reservadas para associação automática aos treinos existentes não são sugeridas como atividades avulsas.
+- O Histórico mostra atividades avulsas em seção própria, por data. Não entram no volume de musculação nem inventam séries ou cargas.
+- Editar uma atividade importada muda seu nome/observação apenas no Tracker. O resumo conserva tipo original, horários, calorias, fonte, frequência e gráfico quando disponíveis. Nenhuma escrita ou exclusão no Saúde.
+- O mesmo identificador do Saúde não pode entrar em duas atividades, numa atividade e num treino, ou reaparecer a partir de um treino na lixeira.
+- Atividades integram armazenamento local, sincronização e backup da conta. Troca de conta mantém isolamento. Integração desligada mantém os registros salvos e interrompe novas buscas.
 
-## Validação
+## Evidência local
 
-100 testes automatizados passaram na configuração de produção, usando somente dados fictícios. Os fluxos de cadastro, edição e importação foram verificados visualmente na prévia beta com nuvem e Saúde simulados. O funcionamento com HealthKit real desta funcionalidade ainda precisa de validação no iPhone; os testes locais não substituem essa etapa.
+100 testes automatizados aprovados (84 regressões existentes, com isolamento adaptado ao beta, e 13 cenários novos). Cadastro manual, alteração de calorias e importação renomeando “Outros” para “Futevôlei” verificados em prévia mobile 390 × 844 com conta, nuvem e Saúde fictícios. Nenhuma conta ou telemetria real foi usada.
 
-## Configuração e destino
+Ainda falta validar no iPhone beta com HealthKit real, após publicação explicitamente autorizada. Não houve alteração Swift: a busca usa a operação healthWorkouts existente. O app iOS precisa abrir /trainning_app_beta/ e usar os IDs OAuth beta.
 
-Destino previsto: raiz do repositório gugasaito/trainning_app, site https://gugasaito.github.io/trainning_app/.
-Firebase: full-body-tracker-b4a42. Armazenamento local: full-body-tracker:account-v3:.
-Cache: full-body-prod-v3171-20261125-1; remove somente caches full-body-prod-, preservando os do beta.
-Sem banner BETA e sem configurações simuladas. As regras Firebase e os IDs nativos não foram alterados.
-Não exige substituição de arquivos Swift: usa a operação healthWorkouts existente. O app iOS de produção deve abrir o endereço de produção e manter os IDs OAuth de produção.
+## Destino proposto (aguarda autorização)
 
-## Aplicação manual
+Repositório beta: gugasaito/trainning_app_beta. Site: https://gugasaito.github.io/trainning_app_beta/
+Firebase: full-body-tracker-beta. Prefixo local fbt-beta:account-v3:. O worker limpa somente caches full-body-beta-; não remove caches de produção. Não migra armazenamento legado de produção.
 
-1. Exporte backup da conta de produção e guarde uma cópia dos arquivos Web publicados antes de aplicar qualquer alteração.
-2. Extraia o ZIP na raiz da cópia local do repositório de produção, preservando a pasta .git. O ZIP inclui .github/workflows/tests.yml com os testes; habilite a exibição de arquivos ocultos para copiar essa pasta e .nojekyll.
-3. Revise as alterações e execute npm test. Este pacote não concede nem executa autorização de push, PR, merge ou deploy; cada ação exige autorização específica.
-4. Após uma publicação autorizada, encerre os treinos ativos, feche todas as abas/janelas do app e reabra para ativar o novo cache. Não limpe os dados locais para atualizar.
-5. Confira v3.17.1, ambiente de produção e conta correta. Valide primeiro com uma atividade fictícia. A consulta real do Saúde exige consentimento consciente para salvar os dados no Firebase de produção.
+Não publicar este pacote na raiz de produção: cloud.mjs exige o endereço beta. Os arquivos de simulação da prévia não fazem parte do pacote.
+
+## Validação no beta publicado
+
+1. Exporte um backup beta antes da atualização e confirme que está no beta.
+2. Cadastre atividade fictícia com calorias; reabra e confira edição, backup e troca de conta.
+3. No iPhone, autorize conscientemente o envio dos resumos ao Firebase beta. Busque a data de uma sessão real do Saúde sem associação existente.
+4. Teste manter tipo original; em outra atividade, altere “Outros” para um tipo escolhido. Confira origem, horário e dados no Histórico.
+5. Repita a busca: a sessão importada não deve reaparecer. Tente associar esse workout a um treino: deve recusar duplicação.
+6. Desligue a integração: buscas devem parar e o Histórico permanecer. Reative e teste as sugestões ao voltar ao app, com automático habilitado.
+7. Confira que o treino original no Saúde permanece intacto.
 
 ## Retorno
 
-Antes de publicar, guarde a versão anterior e backup dos dados. Se houver problema antes de novas gravações, restaure os arquivos anteriores. Depois de criar atividades avulsas, exporte também um backup v3.17.1 e suspenda o recurso mantendo um leitor compatível com activities. Versões antigas ignoram esse campo e podem removê-lo ao salvar; não continue gravando nelas nem substitua o histórico atual por backup antigo. Priorize correção compatível.
+Antes de publicar, guardar cópia completa dos arquivos beta atualmente publicados e backup beta de cada conta de teste. Se houver problema após novos registros, exportar backup v3.17.1 e suspender a nova funcionalidade mantendo o leitor de activities. A versão anterior ignora o novo campo e pode apagar atividades avulsas ao salvar; não continuar gravando nela nem restaurar backup antigo por cima do novo histórico. Priorizar correção compatível. Produção permanece inalterada.
