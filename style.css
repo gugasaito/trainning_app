@@ -79,3 +79,32 @@ nav button:before{display:none}nav button svg{display:block;width:25px;height:25
 
 /* Sprint 03 — Estados acompanhados, com texto e ícone além da cor. */
 .feedback{display:flex;gap:9px;align-items:flex-start;border:1px solid #bfcbd6;background:#edf3f8;color:#25455e;border-radius:12px;padding:12px 14px;line-height:1.5;font-size:13px;overflow-wrap:anywhere}.feedback>span:first-child{font-weight:800;min-width:14px}.feedback-success{background:#e4f3e8;color:#175b34;border-color:#96c5a2}.feedback-warning,.feedback-error{background:#fff0ef;color:#9b2622;border-color:#e5aaa7}.health-session-status{margin:14px 0}.health-session-status button{font-size:13px;padding:9px 12px}.health-session-status .feedback{margin-bottom:8px}#notice[data-state="success"]{background:#17633c;color:#fff}#notice[data-state="error"],#notice[data-state="warning"]{background:#a52a24;color:#fff}#account-header .feedback{font-size:11px;padding:7px 9px;text-align:left}#account-header .feedback span{font-size:inherit;letter-spacing:normal;max-width:none}
+
+/* Sprint 04: Saúde integrado ao cartão branco do Histórico. */
+.history-page .health-integrated{background:transparent;border:0;border-radius:0;padding:0;margin:20px 0;color:#963900;min-width:0}
+.health-integrated h4{font-size:16px;margin:0 0 12px;color:#963900;overflow-wrap:anywhere}
+.health-integrated>p,.health-integrated .hr-source{color:#963900;font-size:12px;line-height:1.6;overflow-wrap:anywhere}
+.health-integrated .hr-horizon{background:transparent;padding:0;border-radius:0;max-width:none}
+.health-metric-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:stretch}
+.health-metric-pair>.hr-hero,.health-calorie-metric{min-width:0;border-radius:16px;padding:16px 12px;display:flex;flex-direction:column;justify-content:center;gap:6px;overflow-wrap:anywhere}
+.health-calorie-metric{background:#fff0df;color:#963900;border:1px solid #ffd6ae}
+.health-metric-pair strong{display:block;font-size:clamp(23px,6vw,38px);line-height:1.15;letter-spacing:-.7px;font-weight:750;overflow-wrap:anywhere}
+.health-metric-pair em{font-size:13px;font-style:normal;letter-spacing:0}
+.health-metric-pair small{display:block;font-size:12px;line-height:1.4;letter-spacing:0;margin:0}
+.health-metric-pair .hr-hero{background:#ce4a00;color:white}
+.health-metric-pair .hr-hero strong,.health-metric-pair .hr-hero small,.health-metric-pair .hr-hero span{color:white}
+.health-metric-pair .hr-hero span{margin:0;font-size:13px}
+.health-metric-pair .health-metric-icon{font-size:26px!important;line-height:1}
+.health-flame{color:#e55b00;display:block;height:26px}.health-flame svg{height:26px;width:26px}
+button.start-workout,button[data-action="start"]{background:#ce4a00;border-color:#ce4a00;color:white}
+button.start-workout:hover,button[data-action="start"]:hover{background:#ac3e00}
+button.start-workout:disabled,button[data-action="start"]:disabled{opacity:.5}
+
+.health-calorie-metric small,.health-calorie-metric strong{color:#963900}
+
+/* Refinamento: calorias em destaque, batimentos em laranja claro. */
+.health-calorie-metric{background:#ce4a00;border-color:#ce4a00;color:#fff}
+.health-calorie-metric strong,.health-calorie-metric small,.health-calorie-metric .health-flame{color:#fff}
+.history-page .health-integrated .health-metric-pair .hr-hero{background:#fff0df;border:1px solid #ffd6ae;color:#963900}
+.history-page .health-integrated .health-metric-pair .hr-hero strong,.history-page .health-integrated .health-metric-pair .hr-hero span,.history-page .health-integrated .health-metric-pair .hr-hero small{color:#963900}
+.health-metric-pair [data-heart-mean-label][hidden]{display:none}
